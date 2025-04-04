@@ -42,7 +42,10 @@ class WorkbookLoader:
             if not is_valid:
                 new_path = self._wb_filename.generate_new_filename(self._file_path)
                 workbook = self._wb_factory.create_new_workbook(self._models, SheetFactory() , new_path)
-                print("\nNovo workbook criado devido a estrutura original ter sido modificada\n")
+                self._file_path = new_path
+
+                print("\nNovo workbook criado devido a estrutura original ter sido modificada")
+                print(f"Novo caminho do workbook: {new_path}\n")
 
                 return workbook, new_path
             
