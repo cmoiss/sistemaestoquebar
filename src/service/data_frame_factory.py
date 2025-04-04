@@ -18,4 +18,9 @@ class DataFrameFactory:
     def create_dataframe_produtos(self) -> DataFrame:
         atributes = list(vars(Produto(None, None)).keys())
         return self._create_generic_dataframe(*atributes)    
-    
+
+    def setup_dataframes(self) -> list[DataFrame]:
+        return [
+            self.create_dataframe_categorias(),
+            self.create_dataframe_produtos()
+        ]   
