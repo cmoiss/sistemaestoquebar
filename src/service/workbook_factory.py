@@ -18,11 +18,11 @@ class WorkbookFactory:
     
     def _create_sheet_produtos(self, book):
         produto = Produto(None, None)
-        self._create_generic_sheet(book, produto.table_name, produto)      
+        self._create_generic_sheet(book, produto.get_table_name(), produto)      
         
     def _create_sheet_categorias(self, book):
         categoria = Categoria(None)
-        self._create_generic_sheet(book, categoria.table_name, categoria)
+        self._create_generic_sheet(book, categoria.get_table_name(), categoria)
     
     def setup_new_workbook(self):
         book = Workbook()
