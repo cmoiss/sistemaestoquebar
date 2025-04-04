@@ -1,4 +1,4 @@
-from src.model.category import Categoria
+from model.category import Categoria
 
 class Produto:
     def __init__(self, nome: str, categoria: Categoria):

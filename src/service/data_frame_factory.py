@@ -1,8 +1,8 @@
 from pandas import DataFrame
 import pandas as pd
 
-from src.model.category import Categoria
-from src.model.product import Produto
+from model.category import Categoria
+from model.product import Produto
 
 class DataFrameFactory:
     def __init__(self):
