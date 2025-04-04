@@ -1,10 +1,7 @@
-from src.service.data_frame_factory import DataFrameFactory
+from service.workbook_handlers.workbook_loader import WorkbookLoader
 
-def main():
-    df = DataFrameFactory()
-    
-    df.create_dataframe_categorias()
-    df.create_dataframe_produtos()
+def main():    
+    WorkbookLoader().load_or_create_workbook()
 
 if __name__ == "__main__":
     main()

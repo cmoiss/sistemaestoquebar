@@ -2,6 +2,7 @@ from openpyxl import Workbook
 
 from model.product import Produto
 from model.category import Categoria
+from service.workbook_handlers.sheet_factory import SheetFactory
 
 class WorkbookFactory:
     path_to_workbook = "data/ControleEstoque.xlsx"
@@ -9,6 +10,22 @@ class WorkbookFactory:
     def __init__(self):
         pass
 
+    def create_new_workbook(
+        self, 
+        models: list,
+        sheet_factory: SheetFactory,
+        path: str = "data/ControleEstoque.xlsx"
+    ) -> Workbook:
+        """Cria um novo workbook com a estrutura padrão"""
+        workbook = Workbook()
+        workbook.remove(workbook["Sheet"])  # Remove a sheet padrão
+        
+        for model in models: # type: ignore
+            sheet_factory.create_sheet_for_model(workbook, model)
+        
+        workbook.save(path)
+        return workbook
+    
     def _create_generic_sheet(self, book: Workbook, sheet_name: str, model):
         book.create_sheet(sheet_name)
         
