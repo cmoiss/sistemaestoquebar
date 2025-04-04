@@ -1,3 +1,6 @@
+from pandas import DataFrame
+import pandas as pd
+
 class DataFrameFactory:
     def __init__(self):
         pass
@@ -6,7 +9,6 @@ class DataFrameFactory:
         return DataFrame(columns=columns)
 
     def create_dataframe_categorias(self) -> DataFrame:
-        dataframe_categorias = DataFrame(columns=["nome"])
-        return dataframe_categorias
+        return self._create_generic_dataframe("nome")
     
     
