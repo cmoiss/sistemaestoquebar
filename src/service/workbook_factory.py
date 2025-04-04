@@ -4,6 +4,8 @@ from model.product import Produto
 from model.category import Categoria
 
 class WorkbookFactory:
+    path_to_workbook = "data/ControleEstoque.xlsx"
+    
     def __init__(self):
         pass
 
@@ -29,4 +31,5 @@ class WorkbookFactory:
         book.remove(book["Sheet"])
         self._create_sheet_produtos(book)
         self._create_sheet_categorias(book)
-        book.save("data/ControleEstoque.xlsx")
+        book.save(self.path_to_workbook)
+        
