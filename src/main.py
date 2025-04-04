@@ -1,10 +1,7 @@
-from IPython.display import display
-from service.data_frame_factory import DataFrameFactory, DataFrame
+from service.workbook_handlers.workbook_loader import WorkbookLoader
 
-def main():
-    dataframes: list = DataFrameFactory().setup_dataframes()
-    display(dataframes[0])
-    display(dataframes[1])
+def main():    
+    WorkbookLoader().load_or_create_workbook()
 
 if __name__ == "__main__":
     main()
