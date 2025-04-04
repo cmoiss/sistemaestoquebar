@@ -11,4 +11,6 @@ class DataFrameFactory:
     def create_dataframe_categorias(self) -> DataFrame:
         return self._create_generic_dataframe("nome")
     
+    def create_dataframe_produtos(self) -> DataFrame:
+        return self._create_generic_dataframe("nome", "categoria")    
     

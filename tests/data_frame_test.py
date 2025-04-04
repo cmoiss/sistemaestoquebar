@@ -13,4 +13,14 @@ def test_create_dataframe_categoria():
     assert expected_dataframe.equals(generated_df)
     assert generated_df.empty
 
+def test_create_dataframe_produtos():
+    expected_columns = ["nome", "categoria"]
+    expected_dataframe = DataFrame(columns=expected_columns)
+
+    generated_df: DataFrame = DataFrameFactory().create_dataframe_produtos()
+
+    # display(expected_dataframe)
+    
+    assert expected_dataframe.equals(generated_df)
+    assert generated_df.empty
     
