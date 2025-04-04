@@ -7,3 +7,9 @@ class Produto:
         
     def get_table_name(self):
         return "produtos"
+    
+    def get_fields(self) -> list[str]:
+        return [
+            "nome",
+            "categoria"
+        ]
